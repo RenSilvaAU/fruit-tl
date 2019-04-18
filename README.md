@@ -18,13 +18,13 @@ cd fruit
 
 	- __Linux__ or __Mac__: 
 	```
-	conda create -n cv-nd python=3.6
-	source activate cv-nd
+	conda create -n fruit python=3.6
+	source activate fruit
 	```
 	- __Windows__: 
 	```
-	conda create --name cv-nd python=3.6
-	activate cv-nd
+	conda create --name fruit python=3.6
+	activate fruit
 	```
 
 3. Install PyTorch and torchvision; this should install the latest version of PyTorch.
@@ -39,10 +39,17 @@ cd fruit
 	pip install torchvision
 	```
 
-6. Install a few required pip packages, which are specified in the requirements text file (including OpenCV).
+4. Install a few required pip packages, which are specified in the requirements text file (including OpenCV).
 ```
 pip install -r requirements.txt
 ```
+
+5. Ensure your Kernel can be used in Jupyter.
+```
+conda install ipykernel
+python -m ipykernel install --user --name fruit --display-name "Python (fruit)"
+```
+
 
 
 ### Data
