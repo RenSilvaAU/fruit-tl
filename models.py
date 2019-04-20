@@ -30,8 +30,8 @@ class Net(nn.Module):
         
         self.maxPool = nn.MaxPool2d(2, 2)         
 
-        self.fc1 = nn.Linear(128 * 26 * 26 , 10)
-        self.fc2 = nn.Linear(10 , 1)
+        self.fc3 = nn.Linear(128 * 26 * 26 , 10)
+        self.fc4 = nn.Linear(10 , 1)
         
         # sigmoid returns a value between 0 -> 1
         self.sigmoid = nn.Sigmoid()
@@ -44,8 +44,8 @@ class Net(nn.Module):
         x = self.maxPool(F.relu(self.conv2_bn(self.conv2(x)))) # 108 x 108 / 2 = 54 x 54
         x = self.maxPool(F.relu(self.conv3_bn(self.conv3(x)))) # 52  x 52  / 2 = 26 x 26
   
-        x = F.relu(self.fc1(x.view(x.size(0), -1)))
-        x = self.sigmoid(self.fc2(x))
+        x = F.relu(self.fc3(x.view(x.size(0), -1)))
+        x = self.sigmoid(self.fc4(x))
 
         return x
 
