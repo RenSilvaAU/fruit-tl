@@ -21,7 +21,7 @@ class Net(nn.Module):
         # As an example, you've been given a convolutional layer, which you may (but don't have to) change:
         # 1 input image channel (grayscale), 32 output channels/feature maps, 5x5 square convolution kernel
         
-        self.conv1 = nn.Conv2d(3, 32, 5)    #  224 x 224 # this time we left the colour channels in 
+        self.conv1 = nn.Conv2d(1, 32, 5)    #  224 x 224 # this time we left the colour channels in 
         self.conv1_bn = nn.BatchNorm2d(32)
         self.conv2 = nn.Conv2d(32, 64, 3)  
         self.conv2_bn = nn.BatchNorm2d(64)
